@@ -1,90 +1,154 @@
-# Jair Pacheco
+# IoT Sensor Dashboard and Networked Control Projects
 
-Electrical Engineer focused on embedded systems, firmware development, IoT hardware, and hardware/software integration.
+**EE 470: Introduction to Internet-of-Things Coursework**
 
-I recently graduated with a B.S. in Electrical Engineering from Sonoma State University. My projects focus on microcontrollers, sensors, communication protocols, control systems, LTE/WiFi telemetry, and remote monitoring systems.
+## Overview
 
-## Featured Projects
+This repository contains cleaned and reorganized Internet-of-Things coursework projects from EE 470. The projects demonstrate embedded device communication, sensor data collection, PHP/MySQL backend integration, web-based control, and networked IoT applications.
 
-### REACH — Remote Energy Access and Control Hub
+The goal of this repository is to present the coursework as a professional portfolio project showing hands-on experience with embedded firmware, web interfaces, database logging, and remote device control.
 
-EE 492–493 senior design project for a solar-powered remote energy management system with LTE/WiFi telemetry, outlet control, scheduling, load prioritization, local diagnostics, and dashboard monitoring.
+## Course Context
 
-**Role:** Team Lead; Particle Boron / LTE Telemetry Lead
+EE 470: Introduction to Internet-of-Things introduced the design principles, components, infrastructure architectures, and networking protocols used to develop IoT systems. The course included hands-on projects involving embedded devices, sensors, web interfaces, database systems, and networked control applications.
 
-**Highlights:**
+## Project Areas
 
-* Led project coordination, integration planning, technical task delegation, and system-level testing.
-* Developed the Particle Boron LTE telemetry workflow for communication between the field device and remote dashboard.
-* Implemented command-routing logic to pass dashboard commands from the Particle Boron to the ESP8266 control hub.
-* Supported integration of UART communication, dashboard command execution, telemetry updates, and remote outlet control.
+### Sensor Database and Dashboard
 
-**Technologies:** Particle Boron, ESP8266, C/C++, LTE, UART, WiFi, I2C, sensors, MOSFET switching, dashboard monitoring
+This project stores registered sensor nodes and their temperature/humidity readings in a MySQL database. The PHP dashboard displays sensor records, registered nodes, average readings, and a Chart.js temperature graph.
 
-### Auto-Pacing PID Robot Car
+Key components:
 
-EE 333 Control Systems project using ultrasonic distance sensing and PID motor-speed control to maintain a target distance from an obstacle.
+* SQL database schema
+* Sensor registration table
+* Sensor data table
+* Combined sensor view
+* PHP data insertion script
+* PHP overview dashboard
+* Chart.js visualization
 
-**Highlights:**
+### RGB / LED Web Control
 
-* Implemented PID-based speed control for an Arduino robot car.
-* Used ultrasonic sensor feedback to maintain a target distance of approximately 25 inches.
-* Tuned controller values to achieve stable response, low overshoot, and zero steady-state error.
-* Demonstrated design iteration through initial and final tuned hardware demos.
+This project demonstrates web-based control of LED and RGB output devices. Embedded firmware communicates with PHP web scripts to update or retrieve output states.
 
-**Technologies:** Arduino Uno, C/C++, HC-SR04 ultrasonic sensor, TB6612FNG motor driver, PID control, PWM motor control
+Key components:
 
-### IoT Sensor Dashboard and Networked Control Projects
+* ESP firmware
+* PHP control pages
+* Text-based state files
+* LED on/off control
+* RGB output control
+* Event-triggered notification logic
 
-EE 470 Internet-of-Things coursework organized into embedded firmware, PHP/MySQL backend scripts, sensor database logging, Chart.js visualization, and web-based LED/RGB control.
+### Lux Monitor
 
-**Highlights:**
+This project measures light levels and provides threshold-based feedback using embedded firmware.
 
-* Built embedded IoT firmware for networked device communication.
-* Developed PHP/MySQL scripts for receiving, validating, storing, and displaying sensor data.
-* Created database schema for registered sensor nodes and temperature/humidity readings.
-* Organized web-based LED/RGB control, sensor dashboard, and network communication projects into a cleaned portfolio repo.
+Key components:
 
-**Technologies:** ESP-based firmware, C/C++, PHP, MySQL, HTML/CSS, Chart.js, HTTP query parameters
+* Light-level measurement
+* Sensor-based input processing
+* Threshold logic
+* Embedded output response
 
-### PIC18F47K42 Microprocessor Projects
+### HQTT / Networked Communication
 
-EE 310 Microprocessors & System Design coursework focused on low-level embedded firmware development using the PIC18F47K42.
+This project demonstrates networked communication between embedded firmware and a PHP backend.
 
-**Highlights:**
+Key components:
 
-* Developed embedded C and assembly programs for microcontroller-based applications.
-* Worked with UART communication, LCD output, basic I/O, and sensor-related projects.
-* Organized coursework into a cleaned portfolio repository demonstrating low-level firmware experience.
+* ESP firmware
+* PHP server-side script
+* HTTP-style communication
+* Web-connected device behavior
 
-**Technologies:** PIC18F47K42, Embedded C, Assembly, MPLAB X, XC8, UART, LCD interfacing
+## Repository Structure
 
-## Technical Interests
+```text
+database/
+  sensor_database_setup.sql
 
-* Embedded systems
-* Firmware development
-* IoT systems
-* Microcontroller programming
-* Hardware/software integration
-* LTE and WiFi telemetry
-* Control systems
-* Test and validation
-* Remote monitoring systems
+firmware/
+  hqtt/
+    ESP_HQTT.cpp
 
-## Tools and Technologies
+  lux-monitor/
+    Lux_Measuring.cpp
 
-**Programming:** C, C++, Python, PHP, MATLAB
+  rgb-led-control/
+    blink_online_main.cpp
+    iot_data_slack_main.cpp
+    online_led_combined_main.cpp
+    rgb_online_main.cpp
 
-**Embedded Systems:** PIC18F47K42, ESP8266, Particle Boron, Arduino, UART, SPI, I2C, timers, interrupts
+web/
+  hqtt/
+    HQTT.php
 
-**Web / IoT:** PHP, MySQL, HTML/CSS, Chart.js, HTTP communication, dashboard integration
+  sensor-dashboard/
+    sensor_overview_dashboard.php
+    sensordata_db_insert.php
 
-**Engineering Tools:** MPLAB X, PlatformIO, LTspice, Vivado, ROS2, Cisco Packet Tracer
+  rgb-led-control/
+    blink-led/
+      ledcontrol.php
+      results.txt
+      update.php
 
-**Hardware / Test:** Oscilloscope, DMM, Analog Discovery, Keysight FieldFox, soldering, power supplies
+    rgb-control/
+      rgb.txt
+      rgb_control.php
+```
 
-## Links
+## Technologies Used
 
-* Portfolio Website: https://jairpacheco.com/
-* LinkedIn: https://www.linkedin.com/in/jair-pacheco-a8104a276
-* GitHub: https://github.com/J-PachEE
+* ESP-based embedded firmware
+* C/C++
+* PHP
+* MySQL
+* HTML/CSS
+* Chart.js
+* HTTP query parameters
+* Hostinger web hosting environment
+* Sensor data validation
+* Web-based device control
+
+## Security Note
+
+This repository is a cleaned portfolio version of EE 470 coursework. Any database credentials, WiFi passwords, API keys, webhook URLs, or other sensitive values have been replaced with placeholders.
+
+Example placeholder values:
+
+
+YOUR_WIFI_SSID
+
+YOUR_WIFI_PASSWORD
+
+YOUR_DATABASE_HOST
+
+YOUR_DATABASE_USERNAME
+
+YOUR_DATABASE_PASSWORD
+
+YOUR_DATABASE_NAME
+
+YOUR_IFTTT_WEBHOOK_URL
+
+
+Do not replace these placeholder values with real credentials in a public repository.
+
+## Skills Demonstrated
+
+* Embedded IoT firmware development
+* Sensor data collection and validation
+* PHP/MySQL backend development
+* Database schema design
+* Web dashboard development
+* Networked device control
+* Organizing IoT projects into firmware, web, and database layers
+* Sanitizing code for public portfolio use
+
+## Notes
+
+This repository is a cleaned and reorganized version of coursework from EE 470. File names and folder organization have been updated to make the projects easier to understand and navigate.
